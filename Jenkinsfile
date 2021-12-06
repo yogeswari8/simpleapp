@@ -1,6 +1,5 @@
 node{
-  def tomcatweb = "/root/apache-tomcat-9.0.55/webapps"
-  def tomcatbin = "/root/apache-tomcat-9.0.55/bin"
+  
   stage('code build'){
     git 'https://github.com/yogeswari8/simpleapp'
   }
@@ -9,6 +8,6 @@ node{
     sh "${mvnHome}/bin/mvn clean install"
   }
   stage('deploy to tomcat') {
-    sh "cp target/simpleapp.war /"${tomcatweb}/simpleapp.war""
+    sh "cp target/simpleapp.war /root/apache-tomcat-9.0.55/webapps"
 }
   
