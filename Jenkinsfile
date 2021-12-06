@@ -8,7 +8,7 @@ node{
     sh "${mvnHome}/bin/mvn clean install"
   }
   stage('deploy to tomcat') {
-    bat "copy target/simpleapp.war /opt/apache-tomcat-9.0.55/webapps"
+    sh "copy target/simpleapp.war /opt/apache-tomcat-9.0.55/webapps"
    }
   stage ('start tomcat') {
     sleep(time:5,unit:"SECONDS")
