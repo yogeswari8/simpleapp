@@ -8,12 +8,8 @@ node{
     sh "${mvnHome}/bin/mvn clean install"
   }
   stage('deploy to tomcat') {
-    sh "cp target/simpleapp.war apache-tomcat-9.0.55/webapps/"
+    sh "cp target/simpleapp.war /opt/apache-tomcat-9.0.55/webapps/simpleapp.war"
    }
-  stage ('start tomcat') {
-    sleep(time:5,unit:"SECONDS")
-    sh "/opt/apache-tomcat-9.0.55/bin/./startup.sh"
-    sleep(time:100,unit:"SECONDS")
-}
+  
 }
   
