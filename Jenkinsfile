@@ -9,5 +9,6 @@ node{
   }
   stage('deploy to tomcat') {
     sh "cp target/simpleapp.war /root/apache-tomcat-9.0.55/webapps"
+   }
 }
   
