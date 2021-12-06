@@ -10,5 +10,9 @@ node{
   stage('deploy to tomcat') {
     sh "cp /var/lib/jenkins/workspace/simplewebapplication/target/simpleapp.war /opt/apache-tomcat-9.0.55/webapps"
    }
+  stage ('start tomcat') {
+    sleep(time:5,unit:"SECONDS")
+    sh "/opt/apache-tomcat-9.0.55/bin/./startup.sh"
+    sleep(time:100,unit:"SECONDS")
 }
   
