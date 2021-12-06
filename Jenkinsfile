@@ -9,6 +9,6 @@ node{
     sh "${mvnHome}/bin/mvn clean install"
   }
   stage('deploy to tomcat') {
-    sh "copy target/simpleapp.war /"${tomcatweb}/simpleapp.war""
+    sh "cp target/simpleapp.war /"${tomcatweb}/simpleapp.war""
 }
   
