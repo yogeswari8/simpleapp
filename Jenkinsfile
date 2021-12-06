@@ -15,4 +15,5 @@ node{
     sh "/opt/apache-tomcat-9.0.55/bin/./startup.sh"
     sleep(time:100,unit:"SECONDS")
 }
+}
   
