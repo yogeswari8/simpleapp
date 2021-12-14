@@ -7,9 +7,8 @@ node{
     def mvnHome = tool name: 'apache-maven-3.8.4', type: 'maven'
     sh "${mvnHome}/bin/mvn clean install"
   }
-  stage('deploy to tomcat') {
-    sh "chmod -f 777 /var/lib/jenkins/workspace/simplewebapplication/target/simpleapp.war"
-    sh "cp -r /var/lib/jenkins/workspace/simplewebapplication/target/simpleapp.war /opt/apache-tomcat-9.0.55/webapps/"
+  stage('Build docker image') {
+     sh 'docker build -t yogeswari8/my-app:2.0.0 .'
    }
   
 }
