@@ -8,7 +8,7 @@ node{
     sh "${mvnHome}/mvn clean install"
   }
   stage('Build Docker Image'){
-     sh 'docker build -t yogeswari8/my-app:2.0.0 .'
+     sh 'docker build -t my-app .'
    }
  
 }  
